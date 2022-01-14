@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import react, { useState, useEffect } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import DailyImage from "./components/DailyImage";
+import Feed from "./components/Feed";
 
 function App() {
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {loading ? (
+        <div className="loading-cont">
+          <div class="container">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <p>Loading Spacestagram Universe...</p>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <Header />
+          <Hero />
+          <DailyImage />
+          <Feed />
+        </div>
+      )}
     </div>
   );
 }

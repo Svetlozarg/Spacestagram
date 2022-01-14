@@ -1,38 +1,132 @@
-.App {
+@font-face {
+    font-family: Gotham-Book;
+    src: url("./fonts/Gotham-Book.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Gotham-Bold;
+    src: url("./fonts/Gotham-Bold.otf") format("opentype");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* { padding:0; margin:0; outline:0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Gotham-Bold";
+}
+
+h1, h2, h3, h4, h5, h6, ul, ol, p {
+  margin: 0;
+}
+
+input, textarea, select { font-family: Arial, sans-serif; font-size:11px; }
+a img { border:0; }
+a {text-decoration: none; cursor:pointer; }
+.cl { font-size:0; line-height:0; clear:both; display:block; height:0; }
+
+html {
+  font-family: 'Gotham-Book';
+}
+
+body {
+  padding:0;
+  margin:0;
+  outline:0;
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Loading Animation */
+.loading-cont {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 45%;
+}
+/* Line */
+.container .ring {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: -30px;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  border-top: 4px solid #24ecff;
+}
+/* Head of line */
+.container .ring::before{
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: #24ecff;
+  box-shadow: 
+    0 0 0 5px #24ecff33,
+    0 0 0 10px #24ecff22,
+    0 0 0 20px #24ecff11,
+    0 0 40px #24ecff,
+    0 0 50px #24ecff;; 
+}
+/* Circle Position & Animation */
+.container .ring:nth-child(1){
+  animation: circle2 2s linear infinite;
+}
+.container .ring:nth-child(2){
+  animation: circle1 2s linear infinite;
+}
+.container .ring:nth-child(3){
+  position: absolute;
+  top: -66.66px;
+  animation: circle 2s linear infinite;
+}
+/* Loading Text */
+.container p{
+  overflow: hidden;
+  position: absolute;
+  color: #fff;
+  font-size: 32px;
+  font-family: consolas;
+  bottom: -200px;
+  letter-spacing: 4px;
+  font-family: 'Gotham-Bold';
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
+/* Animation */
+@keyframes circle{
+  0%{
     transform: rotate(0deg);
   }
-  to {
+  100%{
     transform: rotate(360deg);
+  }
+}
+@keyframes circle1{
+  0%{
+    transform: rotate(120deg);
+  }
+  100%{
+    transform: rotate(480deg);
+  }
+}
+@keyframes circle2{
+  0%{
+    transform: rotate(240deg);
+  }
+  100%{
+    transform: rotate(600deg);
   }
 }

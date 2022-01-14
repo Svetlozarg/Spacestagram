@@ -1,0 +1,39 @@
+header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* background-color: #1f1f1f; */
+  position: absolute;
+  color: #fff;
+  padding: 0 10px;
+  z-index: 100;
+}
+
+@media (max-width: 370px) {
+  header h1 {
+    font-size: 22px;
+  }
+}
+
+header i {
+  font-size: 40px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+@media (max-width: 370px) {
+  header i {
+   font-size: 34px;
+  }
+}
+
+header a {
+  color: #fff;
+  transition: 250ms ease-in-out;
+}
+
+header a:hover {
+  color: #00FF00;
+}
