@@ -1,3 +1,5 @@
+<h1>Shopify Front End Developer Intern Challenge - Summer 2022 Project</h1>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
