@@ -1,5 +1,7 @@
 <h1>Shopify Front End Developer Intern Challenge - Summer 2022 Project</h1>
 
+<p>Link to live project: <a https="https://spacestagram-lime.vercel.app" target="_blank" /></p>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
